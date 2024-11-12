@@ -25,9 +25,7 @@ def save_token_to_db(id, access_token, refresh_token, expires_in, updated_at):
     # Verificar se já existe um token no banco de dados
     cursor.execute(f"SELECT id FROM tokens WHERE id = {id}")
     result = cursor.fetchone()
-    print(result)
     if result:
-        # print(f"Item: {result}")
         # Atualizar o token existente
         query = """
           UPDATE tokens SET access_token = %s, refresh_token = %s, expires_in = %s, expires_at = %s, updated_at = %s WHERE id = %s
@@ -90,7 +88,6 @@ def refresh_token():
             if 'access_token' in token_info:
                 save_token_to_db(data['id'], token_info['access_token'], token_info['refresh_token'], token_info['expires_in'], updated_at)
                 print(f"Informações de acesso da {data['company']} foram atualizadas!")
-                print(token_info)
             else:
                 raise Exception("Falha ao obter novo token: {}".format(token_info))
         else:
