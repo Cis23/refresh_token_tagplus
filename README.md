@@ -1,5 +1,5 @@
-<h1><strong>Job de automação do token do sistema TagPlus<strong></h1>
-<p> Job para atualização automática do token de acesos do tagplus </p>
+<h1><strong>Job de automação de renovação de tokens do sistema TagPlus<strong></h1>
+<p> O objetivo dessa job, é automatizar o processo de renovação de tokens solicitados pela API do tagplus: <a target="blank" title="DOC API TAGPLUS">https://developers.tagplus.com.br/apps</a> </p>
 
 <h2>Passo a passo para o uso</h2>
 <ul>
